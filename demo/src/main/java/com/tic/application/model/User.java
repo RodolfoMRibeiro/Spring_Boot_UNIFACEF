@@ -27,6 +27,10 @@ public class User {
 	@JoinColumn(name = "meta_ID")
 	private Metas metaID;
 	
+	public User() {
+		
+	}
+	
 	public User(String name, String login, String password) {
 		this.name = name;
 		this.login = login;
