@@ -19,15 +19,28 @@ public class Card {
 	protected String titulo;
 	@Column(name="descricao")
 	protected String descricao;
+	@Column(name="materia")
+	protected String materia;
 	@Column(name="concluido")
 	protected boolean concluido;
 	
-	public Card(Long id, String titulo, String descricao, boolean concluido) {
-		super();
+	public Card () {
+		
+	}
+	
+	public Card (String titulo, String descricao, String materia) {
+		this.titulo = titulo;
+		this.descricao = descricao;
+		this.materia = materia;
+		this.concluido = false;
+	}
+	
+	public Card(Long id, String titulo, String descricao, String materia) {
 		this.id = id;
 		this.titulo = titulo;
 		this.descricao = descricao;
-		this.concluido = concluido;
+		this.materia = materia;
+		this.concluido = false;
 	}
 	
 	public Long getId() {
@@ -48,12 +61,20 @@ public class Card {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
+	public String getMateria() {
+		return materia;
+	}
+
+	public void setMateria(String materia) {
+		this.materia = materia;
+	}
 	public boolean isConcluido() {
 		return concluido;
 	}
 	public void setConcluido(boolean concluido) {
 		this.concluido = concluido;
 	}
+	
 	
 	
 }

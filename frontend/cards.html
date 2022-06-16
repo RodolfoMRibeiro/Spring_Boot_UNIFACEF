@@ -7,7 +7,7 @@
     <title>Conceito Exato Cards</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <script src="script.js"> </script>
+    <script src="Card.js"> </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 </head>
 
@@ -49,22 +49,25 @@
                 <form>
                     <input type="number" id="id" hidden />
                     <div class="mb-3">
-                        <label for="nome" class="form-label"> Curso </label>
-                        <input type="text" class="form-control" id="nome" />
+                        <label for="titulo" class="form-label"> Titulo </label>
+                        <input type="text" class="form-control" id="titulo" />
                     </div>
                     <div class="mb-3">
-                        <label for="tipo" class="form-label"> Materia </label>
-                        <input type="text" class="form-control" id="tipo" />
+                        <label for="descricao" class="form-label"> Descricao </label>
+                        <input type="text" class="form-control" id="descricao" />
                     </div>
                     <div class="mb-3">
-                        <label for="poder" class="form-label"> Nome Card </label>
-                        <input type="text" class="form-control" id="poder" />
+                        <label for="materia" class="form-label"> Materia </label>
+                        <input type="text" class="form-control" id="materia" />
                     </div>
-                    <div class="mb-3">
-                        <label for="nota" class="form-label"> Descrição </label>
-                        <input type="number" class="form-control" id="nota" />
+                    <div>
+                        <button onClick="new Card(
+                            false,
+                            document.getElementById('titulo').value,
+                            document.getElementById('descricao').value,
+                            document.getElementById('materia').value
+                        ).cadastrar()" type="button" class="btn btn-primary"> Confirmar </button>
                     </div>
-                    <button onClick="new Card().consulta(document.getElementById('corpoTabela'))" type="button" class="btn btn-primary"> Confirmar </button>
                 </form>
             </div>
         </section>
