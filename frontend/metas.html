@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Conceito Exato Metas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="script_cards.js"> </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <style>
+        .metas {
+            padding: 10px;
+        }
+
+        #confirmar_metas {
+            margin-left: 100px;
+        }
+    </style>
+</head>
+
+<body onLoad="consulta()">
+    <!-- quando a página for carregada -->
+    <header>
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html"> Cards </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#ConteudoMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="ConteudoMenu">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class"nav-item">
+                            <a class="nav-link active" href="index.html"> Home </a>
+                        </li>
+                        <li class"nav-item">
+                            <a class="nav-link active" href="cards.html"> Cards </a>
+                        </li>
+                        <li class"nav-item">
+                            <a class="nav-link active" href="metas.html"> Metas </a>
+                        </li>
+                        <li class"nav-item">
+                            <a class="nav-link active" href="#"> Duvidas </a>
+                        </li>
+                        <li class"nav-item">
+                            <a class="nav-link active" href="#"> Sobre </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="consulta">
+            <div class="container">
+                <h3> Consulta / Alteração de Metas </h3>
+                <div class="form-check metas">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        <h5>Nível Iniciante.</h5>
+                        <h6>Finalizar um card de qualquer curso.</h6>
+                        <div class="border border-success p-2 mb-2 border-opacity-25">
+                            Recomendado para usuários mais novos que começaram a utilizar o aplicativo recentemente. <br>
+                            Tem como objetivo auxiliar o usuário a ganhar consistência nos estudos.
+                        </div>
+
+
+                    </label>
+                </div>
+                <div class="form-check metas">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        <h5>Nível Intermediário.</h5>
+                        <h6>Finalizar três cards de qualquer curso.</h6>
+                        <div class="border border-success p-2 mb-2 border-opacity-25">
+                            Recomendado para usuários que já utilizam o aplicativo a pelo menos 2 meses. <br>
+                            Tem como objetivo aprofundar o conhecimento do usuário e melhorar seu estudo diário.
+                        </div>
+                    </label>
+                </div>
+
+                <div class="form-check metas">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        <h5>Nível Avançado.</h5>
+                        <h6>Finalizar cinco cards de qualquer curso.</h6>
+                        <div class="border border-success p-2 mb-2 border-opacity-25">
+                            Recomendado para usuários experientes no aplicativo, que o utilizam a pelo menos 6 meses. <br>
+                            Tem como objetivo capacitar o usuário na área de exatas.
+                        </div>
+                    </label>
+                </div>
+            </div>
+            <button class="btn btn-primary metas" type="submit" id="confirmar_metas">Confirmar</button>   
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
