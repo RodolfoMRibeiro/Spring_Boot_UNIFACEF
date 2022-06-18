@@ -1,5 +1,0 @@
-package com.tic.application.model.repository;
-
-public class UserRepository {
-
-}

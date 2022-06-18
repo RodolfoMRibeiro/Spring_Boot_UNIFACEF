@@ -21,7 +21,7 @@ public class UserController {
 	@Autowired
 	UserRepository injection;
 	
-	@PostMapping("/usuario")
+	@PostMapping("/usuario/cadastro")
 	@CrossOrigin(origins="*")
 	public String cadastrarUsuario (@RequestBody User usuario) {
 		
@@ -34,26 +34,26 @@ public class UserController {
 		return "Usuário cadastrado com sucesso";
 	}
 	
-	@GetMapping("/usuario/{id}")
+	@GetMapping("/usuario/{login}")
 	@CrossOrigin(origins="*")
-	public User getUsuario (@PathVariable Long id) {
+	public User getUsuario (@PathVariable String login) {
 		List<User> usuarios = injection.findAll();
-		for (int i=0; i<usuarios.size(); i++) {
-			if(usuarios.get(i).getId() == id) {
+		for (int i = 0; i < usuarios.size(); i++) {
+			if(usuarios.get(i).getLogin().equals(login)) {
 				return usuarios.get(i);
 			}
 		}
 		return null;
 	}
 	
-	@PutMapping("/usuario")
+	@PutMapping("/usuario/cadastro")
 	@CrossOrigin(origins="*")
 	public User updateUser (@RequestBody User usuario) {
 		injection.save(usuario);
 		return usuario;
 	}
 	
-	@DeleteMapping("/usuario/{id}")
+	@DeleteMapping("/usuario/{login}")
 	@CrossOrigin(origins="*")
 	public String delete(@PathVariable Long id) {
 		try {
