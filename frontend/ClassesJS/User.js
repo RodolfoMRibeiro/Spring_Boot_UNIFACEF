@@ -28,18 +28,31 @@ class User {
         })
     }
 
-    login = () => {
-        
-    }
-    validateLogin = () => {
-        let user = this.getUserFromDatabase(this.login);
-        if(user != null) {
-            user.then(response => {
-                return ((response.login == this.login) && (response.password == this.password)) ? true : false;
-            })
+    confirmLogin = async() => {
+        if(await this.validateLogin()){
+            alert(`Seja bem vindo ${this.login}`)
+            window.location.href = "../arquivosHTML/index.html";
         }
+           console.log(this.validateLogin())
     }
 
+    validateLogin = () => {
+        if(this.isSet(this.login) && this.isSet(this.password)){
+            let user = this.getUserFromDatabase(this.login);
+            return user.then(response => {
+                if(response == null){
+                    return false
+                }else{
+                    return ((response.login == this.login) && (response.password == this.password)) ? true : false; 
+                }
+            })
+        }
+        console.log('não')
+    }
+
+    isSet(value){
+        return (value == undefined || value == null || value == false || value == "") ? false : true
+    }
 
     getUser = () => {
         return {name: this.name, login: this.login, password: this.password, meta_ID: this.meta_id}
